@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="//unpkg.com/navigo@6"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" 
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" 
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDIUrKudkJqS4dut3d1gEetbwEC2TlUUJw",
+    authDomain: "supple-outlet-301515.firebaseapp.com",
+    projectId: "supple-outlet-301515",
+    storageBucket: "supple-outlet-301515.appspot.com",
+    messagingSenderId: "1010175265756",
+    appId: "1:1010175265756:web:78fb999d13adcbc7e8dd19",
+    measurementId: "G-SZEH8PYTMK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
+        <!-- <img class="avata" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCA8RERIPDxIPDw8PDw8PDw8PDxEPDw8PGBQZGRgUGBgcIS4lHB4rHxgYJkYmKy8xNTU1GiRIQEg4Py40NTEBDAwMEA8PGBISGDEhISE0NDQxMTU0NDExNzExNDQ0MTExNDExMTExMTQxNDQxMTQxNDQxNDE0NDExMTExMTQ0NP/AABEIALcBEwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAABAECAwYFB//EADoQAAMAAQIEBAMFBwIHAQAAAAABAgMEEQUSITEGQVFhEyJxMoGRodFCUoKSscHwFiMVYmNyorLhFP/EABoBAAIDAQEAAAAAAAAAAAAAAAIDAAEEBQb/xAAvEQACAgECAgcJAQEBAAAAAAAAAQIRAwQSITEiQVFhkdHwBRMUMnGBobHhQsEj/9oADAMBAAIRAxEAPwDi0jWUVlGsotsYiYRtMlZRvEi2xiRaJN4grEjMSKbGJExAxEBEDMYxMpBpFYgYjGXx4xiYEymGkZzjNZxmsYzWcYpyCoxmC6g3nGXUAuRdC6xluQYUFuQHcXQtyB8MZ5Q5SbiUK8hV4xtwVcF7iUKPGZvGOOClYy9xVCVQZVjHqgzqA1IraefWMxuB+sZjUDFIGhCsYveM9CoMLgapANHnXBhcj+SBfJA5MBoRuTG5HLkXuRqYDQrSKUjekZ0hiYtoyAnYAgS8o1lFYRrKFsZEvjkZxyZ45GYkVJjEi+OBrHBTHI1jkRKQ1IvjgbxwUxwNxBnlIYkTEG0wEybzIlyDoiZNZgtMl5kW5BURMFlJdSXUlWSjNSTymqknlKssy5Q5TblDlJZVGHKQ5N3JVySyULuClQMuSrkuyUKVJnUDdSZVISkVQncC9wP3BhUDFIqhC4MLgeuBe4HRkA0IXArkk9DJIrkkdFi2hG5F7kdySLXI+LFtCloxpDNoxpDUxbMdgLbEB2CXhG8oyhDEIXING0IZxyY40N4pESY5I2xyOY5McUjmKTNOQ2KNscDMSZ45GYRmkxiRaZNokrKN5QpsKgmTSZCUaJA2FRCkukCJKsoNidiSSWUGxXYkCEI2IaLAQhk0VaNWUaIXRlUmdI3pGdIKyUL1JjcjNIypBplUJ3IvcjdoXtDYsBoSySLZJHMiFbRoiwGhLJItaHciFcqHxYpoTtGFoZyIwtD4sUzDYCwB2DReEMY0YYxmAJBxGMaG8SFcY5iRmmPihrEh3GhXEhzGZZsdFDGNDEIwxjMGZhpGso2hGcmsimw6LosiESgbKLEoqidyWCXAqSSyiQIMNXqseKHky3MRPeqey+i9X7IitukQ33IOT/11pefl+Hn+Hvt8T5d/ryb77ffv7HSaPWYs0K8NzcPzl9vZrun7Mbkw5caTnFq/XpPiDHJGXyuxgqyxAuwyrM6RoylF2EY0jK0b0jKw0Sha0L2hrIjDIhkWC0JZEK5EO5EK5EaIsW0JZEKZEO5EKZEaIsVJCdoXsayC+RGiIpmAFwGCymF9f87jsHm432fr3PRxg5A4cRrEOYhPEO4zLM0RHMQ3jFMQ1jZkmPiNYxiReGMQzPINIYk1kxlmyYphF0WRmmW3BBLbi2TiOminF58EUu83miaX1TZzPivxLWNvTaalz7NZcstNx5fDn0r1fl9e3BnQ0/s+WSG6b23y8/IyZdSouoqz7Ji4hp7e0ZsFv0jNFP8ABMaPiLSPZ4X4h1emXJjtVG+6jMviRP067peyYzJ7LaXQnf1/l/oCOqvmjvfEPHo0cLpz5rT+Hj8un7VPyn+v4tfM+IcQzai+fPdXXXZP7ML0me0oY43xS9Xl+NamWomJmN9phNvz92zzUjbpNKsME2uk+b/4hGbK5uuoBnQ63NgtXhuopbb7PpS9KXZr6k6fSuh9cLbQ+eSCTUiY8GSXGKOs4L4vw5Uo1G2DL25m9sFv2p/Z+j/E6ZV590+qfkz5DqdE4NeF8Y1GlpPHdOE/mw028VrzW37L90c7L7PjPpYXXd1ePV97+o9aiUHtyL7+vXcfWGytC+h1sZ8cZsb3jIt16y/OX7p9Dds5TTTaaNy48UVoyo1pmVMJBUY2L2b0L5BkQWhfIKZBrKK5DRAWxSxXKNZRTIaYiWK2L2MWL5DTETIxAADFiWC9uh6enrojyEx/SZG+j7b9w8i4AYZdR62McxCWJjmJmGZuiO4xuBPGNY2ZZj4jeNm8sWxs3lmaQxDMM1TMYZarmU6pqZlOqqmlMpd235CmEbJnMcf8Vxi5sOmavKt5rJ0rHjfnt61+S9+x5fiDxVWTmw6VucfWby9smRean92ffu/bz5Q6ml9n/wC8y+i8/Lx7DnZ9V/nH4+XmXq3TdU3VU3VU3u3Te7bZUC0o6xhBIupOp8J+HcepjJlzrJyTcxjUVyK2k+bfpu11ns/U6XJ4S0NQ4mHFdXORXVXNbee76r2MGb2hhxTcHdrmaYYG1Z8ycBixt0kk6beySTbb9EjpuM+GMmlj4ruMkc6j5ZpNbp/M/JLpt380U8HaB3q5vb5NOnlp+XPs1C+u73/hY34mDxSyxdpFvC7RTDw7PjxxmyY7nHbaTa2a9HS7yn5b+h6WBpo7tM4TiuiyaW30p4Ke8Wk2pT7TT8mu3uczHqPftpqn6/P7+x0cGRY+D5C+vwy5Zy2pjame7qdcmttzwNRe7OlpoyS4mPXzhKVxPb8Kca//ADZPh5Htgyv5t+2O+yyfTyftt6H0Tm/xHxo7Dwn4g25dLnfT7OG2+3pFP+n4ehn1+l3f+sFx6/Pz8e0HSZ0uhL7eXkdnTMqZamZtnKR0SlsXyM1pmGRjIlMwtiuQYtiuRmiAqQtkYpkYzkYrkZqgJkLZBeze2LWaIiZGYAAwWecO6B916CQ3ol8727Kev1GT+VicXzI9fGx3FR50UNY7MU0dCLPSx0NRR5+OxnHZllEdFj0UMRR57yzKdU1MpbuqaUpe7PO1XibBj6Y081+28wvrTXX7kxSwzm6irClkhBXJ0dHk1ERFXdKIlb1VdkjheP8AHr1Vck749PL+WOztrtV/p5fmJ8S4rm1LXxa2lPeccdMcv12837sQOjpdEsT3z4y/X97/AAOdqNU8nRjwX78l3EgQSbjKWSPQ4To/j58eHdpZMky3O3Mp7019EmefJ2ngLQb3k1NbbRvhj1+I0m390tL+JmbU5fdYpT6+r69Q7DHdJI7nQaOZUYMMqZiVMSuyleb/AFOgw8Nxyvm+d+e4rwJJ8781sl9D2Tl+z9JjyQeXItzbfPy63faHqMslLanSR5+fhuK00kp3W3qn7NM8W9MsLcKZhLyiVM/XZHVHj8blfI/Nul9xftDSY4YveQW2uaXJ33crK0+WW/a3dnlNiXFtL8fBkw78ruGpp9la6y37bpDbYjxXV/BwZcy23x4qqd+zvbaV+LRy8e7dHbztV9eo6DSp3yPk2fniqi05qKqLl95pPZowbJu3TdU3VU3VU3u6p9W37lD16Rx2AABZR2vhfjzybabPW+RLbHb72v3X6s9zFrsOSrjHkm6xva5mt3J8vTa6ro12a7o9LgWsrFnlprlt8mTm7fDb3b+q23Odn0MXunHg+zv/AL2dv1N2HVy6MJK+/wBeq+h9AqjC2WqvTqn1TXZoyujnRR0WZ2xTIze6FclGiCFyMMjFcjN8lC1s0RQiRhbFrN7ZhTNERDMwIAMWJ4YTez37eQ/jSnpK2EMW+45LDmBiY1NDEWee88z3f3LqzK9fXaFy+76sV7tvkP8Aexie58eYXNVKV6t7Cufjqnpinmf797qfuXd/keHV1T3pun6t7lS46ePOXEXLUy/zwGNVrMuV/wC5bpLqp7RP0S/qLgA9JJUjM227YABBZCSUQSQhaTuvAOpn4eXD2qbWZdetTUqXsvblX8yOETNtNqLx0riqi5e81LaaM+pwe+xOF1/B2HJslZ9t4fq/h3u+svpSOlxZZpc0NNeqPhum8Xaydud4si8+fHs3/I0ezpvG6W3PiuX51iy7/gml/U5uHFqtLajFTj2XXHuv88DRkjjy9JOmfWsmSZW9NJe7OU49xnDH+5ltRjW8zvu6p+e0rq39Dx58R6a8WTNOR2sU89xXTIvJLZ+raW66dT53xTiOTUXWTI+r+zKfyxPlM+xe3NrJbci2RjzXW39f549VRhHD0rts6zU+OcS3WPDd+jyXOPf32So5vjfiLPq0opLHiT3+HDb5q9ar9r8keNTKtm7DosONqUY8V18xGTPKXBsGQAGsTYABBCEhuQSQh1vh7iPxMfwre+TGvl371H/z9D1Ks4PTZ6x3Nw9ql7/X2OsxaqckLJPal1Xmn5o5uowbZ7lyf7Onps2+G181+je8gtdkXkMbsGMRrYXQtdFqswqh0UJkylsxtl6oxbHJCJMNwKbgGBYtF7e4VdPz+5dCgDRFuqJIACFAAEkIQSSk30XVvsl3H9Lw7frkey/dl9fvfkVKSjzCjBy5CMy6e0p032Uptv7kPYOC6q+2PlXrVTP5d/yPd0qjGtoSle3n9X5noYs0+pkyamS+WJtx6OD+aXh6s5teG9T/ANL+Z/oXnwxqn54V9bv+0nVTmk2nIvUzvV5l2eBpWjw9/icvj8I5n9rLiX0VV+hr/o7L5Zsb+sUv1OpnIvUvORCnq8/b+EH8Fg7Pyzj34R1flenf8drf/wADGvDWun9ia/7cmP8AuzulkLfEItbm66f28mivgsfVfifLtRjyY6cZJrHaXWaTl7f3XQ34XwzLqr5Ma2lbc+St+SF/d+x3+v0eHUTyZpVpfZrtcP1ml1RtiiIlTEzErtMpSvwQ567ocI9L8eu4UtB0+Muj+RDR+HNHjSTxrLSXW8vzb/w/ZX4Dr0eBLlWLCp/d+FHL+GxerM6yGCTnN3KTZtjjjFUlQtfC9J3+Bg+7FK/sIajgOjrr8Pkf/Jdpfhvt+R6dWZXQyEpx5SfiVKEHzivA8efD2knvOS/asjX/AK7HO8a0s481TC5cb2cJb/L0W66/51OyyWcx4kXzy/Vb7/k/6I3aac3k6TbMOqxY1ie2KVHikAB0DmEj/CtVyVyN/LfT2VeR54IGUVJUwoScZKSOluzGqFtNqOaev2p6P3XqWqzNso3b01aL1ZjVEVZlVBqIuUiaZnTCmZtjEhTkTuBTcAqAsxAACFgAAiEJLTG/si0wWRCGuKlPZdfXzNp1LFtiUgdqGKTXIbnVM1nWv1EQ2BcEEssl1npzxF+prHE36nlbBsC8UewNZ5rrPanir9TaOLP1Oe2LIB4IdgfxMzpJ4v7mi4ucymXQD08Bi1UzpP8Ai6B8XRzbKbsr4aBHq5o6Z8WRV8UXqc1u/UHb9S/hoFfFyOifE/crXEfc5zmfqSrfqF8PEr4uR7z1x5vGcivGn5zX5MUVsrkpuWvVBRxKLTQE87lFpiIABoMgAAEIaYcjmk/x+g68iPPLxfkC42HCdcBmrKuzB0RuTaXvNXRRspuG5dAbi24FNwLJZAACIUCRpJQsmQhfcncpuW3KLJ5idyheUiEI5iyoORBsQhfmBUZ7lk0Qs05iUzB2aY+pRaZskBZbEtIEOijZRs1qEY1SLRUiQZXmRFWiwSSNyqslssonmJ5jJgiEMaWzZU0yrruZlggAAQgAAEIWTAqTuQhJAEEISBAEIAABCAAAQhO4bgBCBuSqACELfEDmACEsrzBzABCBzGkZNgAjIjRZSyzAANB2yKymFUAFpAyZHMQ2AFlMOYnnZIEKJTLrcAKCK5F0MQAspgAAQgAAEIAABCEkABCAAAQh/9k=" alt="">
+        <a class="info" href="#">Thông tin cá nhân</a> -->
+        <p>Hãng</p>
+        <a href="#">Apple</a>
+        <a href="#">Asus</a>
+        <a href="#">HP</a>
+        <a href="#">Dell</a>
+        <a href="#">Lenovo</a>
+        <a href="#">Acer</a>
+        <a href="#">LG</a>
+        <a href="#">Khác</a>
+        <p>Khoảng giá</p>
+        <a href="#">Dưới 2.000.000</a>
+        <a href="#">2.000.000 - 5.000.000</a>
+        <a href="#">5.000.000 - 10.000.000</a>
+        <a href="#">10.000.000 - 15.000.000</a>
+        <a href="#">15.000.000 - 20.000.000</a>
+        <a href="#">20.000.000 - 30.000.000</a>
+        <a href="#">Trên 30.000.000</a>
+        <p>Thể loại</p>
+        <a href="#">Văn phòng</a>
+        <a href="#">Gaming</a>
+        <a href="#">Đồ họa</a>
+        <a href="#">Mới</a>
+        <a href="#">Cũ</a>
+        <a href="#">Khác</a>
+        <a class="content" href="#">Cài đặt</a>
+    </div>
+    <div id="main">
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6KCw1b4qyShcWFv3vHlhV-GmPfbn4biyEhw&usqp=CAU" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            LLS
+          </a>
+          <form class="d-flex">
+            <input class="form-control me-2 nav" type="search" placeholder="Search" aria-label="Search">
+            <button class="btnt btn-outline-primary search" type="  submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <span style="font-size:25px;cursor:pointer;     position: fixed;   " onclick="openNav()">&#9776;</span>
+      
+    <p class="content">Bán chạy</p>
+    <div class= "news">               
+        <div data-aos="fade-up-left" class="tt" >
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/688/10047431-dell-gaming-g5-15-5500-i7-10750h-15-6-inch-70225485-1_ja1n-ji.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/dell-gaming-g5-15-5500-i7-10750h-70225485.html">Dell Gaming G5 15 5500 i7-10750H 15.6 inch 70225485</a></h4>
+            <p>21.990.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/681/10046040-laptop-hp-core-i3-1005g1-4gb-window10-home-193q3pa-1.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/dell-gaming-g5-15-5500-i7-10750h-70225485.html">HP 15S-fq1107tu Core I3-1005G1 15.6 inch 193Q3PA</a></h4>
+            <p>10.990.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/708/10048388-laptop-macbook-air-m1-13-3-inch-256gb-mgnd3sa-a-vang-1.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-macbook-air-m1-13-3-inch-256gb-mgnd3sa-a-vang.html">Laptop MacBook Air M1 13.3 inch 256GB MGND3SA/A Vàng</a></h4>
+            <p>27.900.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/674/10046784-apple-macbook-air-i5-13-3-inch-mqd32sa-a-1_f2o8-9s.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/apple-macbook-air-i5-13.3-inch-mqd32sa-a-2017.html">Apple Macbook Air i5 13.3 inch MQD32SA/A 2017</a></h4>
+            <p>18.290.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/693/10047852-laptop-asus-zenbook-14-ux425ea-i5-1135g7-14-inch-bm069t-1.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-asus-zenbook-14-ux425ea-i5-1135g7-8gb-512gb-bm069t.html">Laptop Asus ZenBook 14 UX425EA i5-1135G7/8GB/512GB BM069T</a></h4>
+            <p>21.990.000</p>
+        </div>
+    </div>
+
+    <p class="content">Máy cũ</p>
+    <div class= "news">               
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/666/10046532-hp-14s-dk1055au-amd-r3-3250u-14-inch-171k9pa-1_bv2s-h8.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-hp-14s-dk1055au-r3-3250u-14-inch-171k9pa.html">Laptop HP 14S-DK1055AU R3-3250U 14 inch 171K9PA (cũ)</a></h4>
+            <p>Tình trạng: 99% </p>
+            <p>8.290.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/704/10048225-laptop-dell-vostro-3405-amd-r5-3500u-v4r53500u003w-1_madc-hn.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-dell-vostro-3405-amd-r5-3500u-v4r53500u003w.html">Laptop Dell Vostro 3405 AMD R5-3500U V4R53500U003W (cũ)</a></h4>
+            <p>Tình trạng: 99% </p>
+            <p>12.520.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt" >
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/688/10047431-dell-gaming-g5-15-5500-i7-10750h-15-6-inch-70225485-1_ja1n-ji.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/dell-gaming-g5-15-5500-i7-10750h-70225485.html">Dell Gaming G5 15 5500 i7-10750H 15.6 inch 70225485 (cũ)</a></h4>
+            <p>Tình trạng: 99% </p>
+            <p>18.590.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/718/10048648-laptop-hp-pavilion-x360-14-dw1019tu-i7-1165g7-14-inch-2h3n7pa-1.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-hp-14s-dk1055au-r3-3250u-14-inch-171k9pa.html">Laptop HP Pavilion X360 14-DW1019TU i7-1165G7 14 inch 2H3N7PA (cũ)</a></h4>
+            <p>Tình trạng: 95% </p>
+            <p>17.290.000</p>
+        </div>
+        <div data-aos="fade-up-left" class="tt">
+            <img src="https://cdn.nguyenkimmall.com/images/thumbnails/600/336/detailed/718/10048626-laptop-hp-pavilion-x360-14-dw1016tu-i3-1115g4-14-inch-2h3q0pa-1.jpg"> 
+            <hr><br>
+            <h4><a href="https://www.nguyenkim.com/laptop-hp-14s-dk1055au-r3-3250u-14-inch-171k9pa.html">Laptop HP Pavilion X360 14-DW1016TU i3-1115G4 14 inch 2H3Q0PA (cũ)</a></h4>
+            <p>Tình trạng: 99% </p>
+            <p>11.550.000</p>
+        </div>
+    </div>
+
+    <div class="footer">
+
+
+        <div class="nav-footer">
+            <div class="logo">
+                <a href="#" class="navbar-brand">
+                    <img
+                        src="https://image.shutterstock.com/image-vector/design-logo-laptop-style-vector-260nw-1688282050.jpg">
+                </a><b>LLS</b>
+            </div>
+            <div>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">PC</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Apple</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Asus</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">HP</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Dell</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Lenovo</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Acer</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">LG</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Khác</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="log">
+                <div><i class="fab fa-facebook-square fb"></i></div>
+                <div><i class="fab fa-instagram ins"></i></div>
+                <div><i class="fab fa-twitter-square tw"></i></div>
+            </div>
+        </div>
+        
+        <!-- REVIEW -->
+
+
+    </div>
+
+
+</div>
+
+    <!-- ........................................ -->
+
+    <script src="js/nav.js"></script>
+</body>
+
+</html>

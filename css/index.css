@@ -1,0 +1,221 @@
+.nav{
+    width: 1000px;
+}
+
+.search-form{
+    display: flex;
+    justify-content: center!important;
+}
+
+.search{
+    background-color: rgb(95, 98, 255);
+    color: white;
+   
+}
+
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgb(33, 192, 255), rgb(230, 230, 230) 100%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+  }
+  
+  .sidenav p {
+    padding: 8px 8px 0px 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+  }
+
+  .sidenav a {
+    padding: 0px 8px 2.5px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(37, 37, 37);
+    display: block;
+    transition: 0.3s;
+    margin-left: 20px;
+  }
+
+  .sidenav .content {
+    padding: 8px 8px 0px 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: yellow;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 0px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .sign-out:hover{
+      color: red!important;
+  }
+
+  .navbar{
+    background: linear-gradient(135deg, rgb(33, 192, 255) 0%, rgb(255, 255, 255) 100%);
+  }
+
+  .video-item{
+      height: 50px;
+  }
+
+ .info{
+   font-size: 20px!important;
+ }
+
+ .avata{
+   height: 60px;
+   width: 60px;
+   margin-left: 80px;
+   clip-path: circle(50% at 50% 50%);
+ }
+
+ /* ........................... */
+
+ .news{
+    height: 100%;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 200px;
+    }
+
+.news img{
+    height:60%;
+    width: 100%;
+    text-align: center;
+    
+}
+.news h4{
+    font-size: 18px;
+}
+
+.tt{
+    margin-bottom: -50px;
+
+}
+
+.news div{
+    height: 300px;
+    width: 20%;
+    padding: 20px;
+}
+
+.news a{
+    color: black;
+}
+
+.news a:hover{
+    transition: 0.5s;
+    color: rgb(155, 155, 30);
+}
+
+.content{
+    font-size: 30px;
+    margin-left: 40px;
+    color: rgb(255, 58, 51);
+}
+
+.footer{
+    background: linear-gradient(135deg, rgb(33, 192, 255) 0%, white 100%);
+    width: 100%;
+    display: flex;
+;
+}
+.footer li a{
+    font-size: 20px;
+    }
+.footer i{
+    font-size: 50px;
+}   
+.nav-footer{
+    display:flex; 
+    box-sizing: border-box;
+    justify-content: space-between;
+   
+} 
+.fb:hover{
+    color: rgb(37, 37, 192);
+}
+.ins:hover{
+    color: orange 
+}
+.tw:hover{
+    color: rgb(62, 195, 240)
+}
+.git:hover{
+    color:white
+}
+
+.log{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.log div{
+    padding-left: 10px;
+}
+
+.logo img{
+    height: 70px;
+    width: 90px;
+}
+
+.next{
+  display: flex;
+  justify-content: space-around;
+}
